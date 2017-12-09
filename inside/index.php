@@ -10,8 +10,8 @@
         <link rel="stylesheet" type="text/css" href="normalize.css" />
         <link rel="stylesheet" type="text/css" href="main.css" />
         <link rel="stylesheet" type="text/css" href="index.css" />
-        <link rel="stylesheet" type="text/css" href="inside/navbar/navbar.css" />
-        <link rel="stylesheet" type="text/css" href="inside/footer/footer.css" />
+        <link rel="stylesheet" type="text/css" href="innnernavbar/navbar.css" />
+        <link rel="stylesheet" type="text/css" href="footer/footer.css" />
         <?php $currentPage = 'index.php';?>
     </head>
     <body>    

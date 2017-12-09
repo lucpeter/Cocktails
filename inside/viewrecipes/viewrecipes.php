@@ -11,6 +11,7 @@
         <link rel="stylesheet" type="text/css" href="../../main.css"/>
         <link rel="stylesheet" type="text/css" href="../innernavbar/navbar.css"/>
         <link rel="stylesheet" type="text/css" href="../footer/footer.css"/>
+        <link rel="stylesheet" type="text/css" href="viewrecipes.css"/>
         <?php $currentPage = 'viewrecipes.php';?>
     </head>
     <body>    
@@ -20,6 +21,13 @@
                 <?php include '../innernavbar/navbar.php'?>
                 <article>
                     <h1 class="pageTitle">View Recipes</h1>
+                    <div class="card">
+                        <img src="../../images/cocktailIcon.png" alt="Avatar" width="100" height="100">
+                        <div class="container">
+                            <h4><b>Drink</b></h4> 
+                            <p>Drink description</p> 
+                        </div>
+                    </div>
                 </article>
                 <?php include '../footer/footer.php'?>
             </div>

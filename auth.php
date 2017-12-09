@@ -25,16 +25,16 @@
                             <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
                         </div>
                         <div class="container">
-                            <label><b>Username</b></label>
+                            <label hidden><b>Username</b></label>
                             <input type="text" placeholder="Enter Username" name="uname" required>
-                            <label><b>Password</b></label>
+                            <label hidden><b>Password</b></label>
                             <input type="password" placeholder="Enter Password" name="psw" required>
                             <button type="submit">Login</button>
                         </div>
 
-                        <div class="container" style="background-color:#f1f1f1">
+                        <div class="container cancelContainer" style="background-color:lightgray">
                             <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw">Forgot <a href="#">password?</a></span>
+                            <span class="psw"><a href="#">Forgot password?</a></span>
                         </div>
                     </form>
                 </section>

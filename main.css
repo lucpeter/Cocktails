@@ -1,0 +1,43 @@
+body {
+    margin: 5px;
+    padding: 0;
+    background-image: url("./images/background_sdaquiri.jpg");
+    background-repeat: repeat;
+    background-size: cover;
+    color: lightgray;
+    font-family: "Times New Roman", serif;
+    overflow-x: hidden;
+    height: auto;
+}
+
+.pageTitle {
+    text-align: center;
+    -ms-transform: skew(-20deg); /* IE 9 */
+    -webkit-transform: skew(-20deg); /* Safari */
+    transform: skew(-20deg)
+}
+
+#welcomeMessage {
+    width: 75%;
+    margin: auto;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+a {
+    color: lightgray;
+}
+
+a:link {
+    text-decoration: none;                         
+}
+
+a:visited {
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a:active {
+}

@@ -66,7 +66,7 @@ if (isset($_POST['login'])) {
 
                         <div class="container cancelContainer">
                             <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw"><a href="#">Folabelpassword?</a></span>
+                            <span class="psw"><a href="#">Forgot password?</a></span>
                         </div>
                     </form>
                 </section>

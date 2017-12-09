@@ -13,12 +13,16 @@
         <link rel="stylesheet" type="text/css" href="../footer/footer.css"/>
         <?php $currentPage = 'myaccount.php';?>
     </head>
-    <body>    
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <?php include '../innernavbar/navbar.php'?>
-        <article>
-            <h1 class="pageTitle">View Recipes</h1>
-        </article>
-        <?php include '../footer/footer.php'?>
+    <body>
+        <section>
+            <div class="content">
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <?php include '../innernavbar/navbar.php'?>
+                <article>
+                    <h1 class="pageTitle">My Account</h1>
+                </article>
+                <?php include '../footer/footer.php'?>
+            </div>
+        </section>
     </body>
 </html>

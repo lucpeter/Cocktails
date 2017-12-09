@@ -1,3 +1,15 @@
+<?php
+if (isset($_POST['login'])) {
+    require_once 'database/database.php';
+    session_start();
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
+
+    if ($db->is_valid_user($user, $pass)) {
+        $_SESSION['user'] = $user;
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -51,7 +63,7 @@
 
                         <div class="container cancelContainer">
                             <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw"><a href="#">Forgot password?</a></span>
+                            <span class="psw"><a href="#">Folabelpassword?</a></span>
                         </div>
                     </form>
                 </section>

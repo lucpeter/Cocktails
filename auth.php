@@ -32,7 +32,24 @@
                             <button type="submit">Login</button>
                         </div>
 
-                        <div class="container cancelContainer" style="background-color:lightgray">
+                        <div class="container cancelContainer">
+                            <button type="button" class="cancelbtn">Cancel</button>
+                            <span class="psw"><a href="#">Forgot password?</a></span>
+                        </div>
+                    </form>
+                    <form action="p" autocomplete="off" style="float: right;">
+                        <div class="imgcontainer">
+                            <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
+                        </div>
+                        <div class="container">
+                            <label hidden><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <label hidden><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+                            <button type="submit">Login</button>
+                        </div>
+
+                        <div class="container cancelContainer">
                             <button type="button" class="cancelbtn">Cancel</button>
                             <span class="psw"><a href="#">Forgot password?</a></span>
                         </div>

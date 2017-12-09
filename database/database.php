@@ -1,27 +1,36 @@
 <?php
-include database_info.php;
+require_once 'database_info.php';
 
 class CockTailDAO {
     private $conn;
 
     public function __construct($servername, $username, $password, $dbname) {
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $this->conn = new mysqli($servername, $username, $password, $dbname);
 
-        if ($conn->connect_error) {
-            die("Connection failed: " . $conn->connect_error);
+        if ($this->conn->connect_error) {
+            die("Connection failed: " . $this->conn->connect_error);
         } 
     }
     
     public function is_valid_user($email, $pass) {
         $query = "select * from users where email = ? AND password = ?";
-        $stmt = $conn->prepare($query);
+        $stmt = $this->conn->prepare($query);
         $stmt->bind_param("ss", $email, $pass);
         $stmt->execute();
 
-        if ($stmt->num_rows == 1) {
-          return TRUE;
-        }
-        return FALSE;
+        $valid = $stmt->get_result()->num_rows == 1;
+        $stmt->close();
+
+        return $valid;
+    }
+
+    function insert_user($email, $pass) {
+        $query = 'insert into users (email, password) values (?, ?)';
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('ss', $email, $pass);
+
+        $stmt->execute();
+        $stmt->close();
     }
 
     function get_cocktails() {

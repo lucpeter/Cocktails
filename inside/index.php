@@ -1,3 +1,7 @@
+<?php
+require_once 'ensure_auth.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en-US">
     <head>

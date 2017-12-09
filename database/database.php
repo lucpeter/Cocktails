@@ -13,8 +13,6 @@ class CockTailDAO {
     }
     
     public function is_valid_user($email, $pass) {
-
-
         $query = "select * from users where email = ? AND password = ?";
         $stmt = $conn->prepare($query);
         $stmt->bind_param("ss", $email, $pass);
@@ -28,7 +26,7 @@ class CockTailDAO {
 
     function get_cocktails() {
         $data = [];
-        $sql = "SELECT *  FROM cocktails";
+        $sql = "SELECT * FROM cocktails";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
@@ -38,6 +36,14 @@ class CockTailDAO {
             }
         }
         return $data;
+    }
+
+    function insert_cocktail($name, $creator, $category, $description, $ingredients) {
+        $query = "insert into cocktails(name, creator, category, description, ingredients) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conn->prepare($query);
+        $stmt->bind_param("sssss", $name, $creator, $category, $desciption, $ingredients);
+        $stmt->execute();
+        $stmt->close();
     }
 }
 

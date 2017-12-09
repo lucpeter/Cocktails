@@ -11,11 +11,11 @@ body {
 }
 
 .pageTitle {
-    color: darkcyan;
+    color:darkcyan;
+    text-align: center;
     -ms-transform: skew(-20deg); /* IE 9 */
     -webkit-transform: skew(-20deg); /* Safari */
     transform: skew(-20deg);
-    opacity: 0.5;
 }
 
 #welcomeMessage {

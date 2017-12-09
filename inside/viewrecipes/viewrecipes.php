@@ -26,6 +26,7 @@
                         <div class="container">
                             <h4><b>Drink</b></h4> 
                             <p>Drink description</p> 
+                            <p>Drink Author</p> 
                         </div>
                     </div>
                 </article>

@@ -6,6 +6,7 @@ form {
     width: 45%;
     max-width: 700px;
     margin: 12px auto;
+    text-align: center;
 }
 
 input[type=text], input[type=password] {
@@ -72,6 +73,11 @@ span.psw {
 span.psw a {
     color: black;
     float: right;
+}
+
+h3 {
+    color: darkcyan;
+    margin: 5px auto;
 }
 
 /* Change styles for span and cancel button on extra small screens */

@@ -1,3 +1,16 @@
+<?php
+if (isset($_POST['login'])) {
+    require_once 'database/database.php';
+    session_start();
+    $user = $_POST['user'];
+    $pass = $_POST['pass'];
+
+    if ($db->is_valid_user($user, $pass)) {
+        $_SESSION['user'] = $user;
+        header('Location: inside/');
+    }
+}
+?>
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
@@ -20,17 +33,17 @@
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <section>
                     <h2>Login Form</h2>
-                    <form action="p" autocomplete="off">
-                        <legend>Register:</legend>
+                    <form method="post" action="" autocomplete="off">
+                        <h3>Register</h3>
                         <div class="imgcontainer">
                             <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
                         </div>
                         <div class="container">
-                            <label hidden><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <label hidden><b>Email</b></label>
+                            <input type="text" placeholder="Enter Email" name="email" required>
                             <label hidden><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                            <button type="submit">Login</button>
+                            <input type="password" placeholder="Enter Password" name="pass" required>
+                            <button type="submit" name="register">Register</button>
                         </div>
 
                         <div class="container cancelContainer">
@@ -38,22 +51,22 @@
                             <span class="psw"><a href="#">Forgot password?</a></span>
                         </div>
                     </form>
-                    <form action="p" autocomplete="off" style="float: right;">
-                        <legend>Login:</legend>
+                    <form method="post" action="" autocomplete="off" style="float: right;">
+                        <h3>Login</h3>
                         <div class="imgcontainer">
                             <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
                         </div>
                         <div class="container">
                             <label hidden><b>Username</b></label>
-                            <input type="text" placeholder="Enter Username" name="uname" required>
+                            <input type="text" placeholder="Enter Username" name="user" required>
                             <label hidden><b>Password</b></label>
-                            <input type="password" placeholder="Enter Password" name="psw" required>
-                            <button type="submit">Login</button>
+                            <input type="password" placeholder="Enter Password" name="pass" required>
+                            <button type="submit" name="login">Login</button>
                         </div>
 
                         <div class="container cancelContainer">
                             <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw"><a href="#">Forgot password?</a></span>
+                            <span class="psw"><a href="#">Folabelpassword?</a></span>
                         </div>
                     </form>
                 </section>

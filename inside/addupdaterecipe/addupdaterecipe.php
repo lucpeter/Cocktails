@@ -9,6 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="../../normalize.css" />
         <link rel="stylesheet" type="text/css" href="../../main.css"/>
+        <link rel="stylesheet" type="text/css" href="adddupdaterecipe.css"/>
         <link rel="stylesheet" type="text/css" href="../innernavbar/navbar.css"/>
         <link rel="stylesheet" type="text/css" href="../footer/footer.css"/>
         <?php $currentPage = 'addupdaterecipe.php';?>
@@ -26,6 +27,7 @@
                             <label for="title">Title*:</label>
                             <input id="title" type="text" name="title" placeholder="Cocktail Title" required><p id="title" class="errorMessage" hidden>Recipe Title is not valid.</p><br>
                             <label for="category">Category*:</label>
+                            <br>
                             <select id="category" name="category">
                                 <option class="default" value="categoryId">Category</option>
                             </select>

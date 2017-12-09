@@ -19,6 +19,7 @@ body {
 }
 
 #welcomeMessage {
+    color:darkcyan;
     width: 75%;
     margin: auto;
     font-size: 1.5em;

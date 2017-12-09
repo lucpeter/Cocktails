@@ -21,6 +21,7 @@
                 <section>
                     <h2>Login Form</h2>
                     <form action="p" autocomplete="off">
+                        <legend>Register:</legend>
                         <div class="imgcontainer">
                             <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
                         </div>
@@ -38,6 +39,7 @@
                         </div>
                     </form>
                     <form action="p" autocomplete="off" style="float: right;">
+                        <legend>Login:</legend>
                         <div class="imgcontainer">
                             <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
                         </div>

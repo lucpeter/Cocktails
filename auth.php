@@ -10,6 +10,15 @@ if (isset($_POST['login'])) {
         header('Location: inside/');
     }
 }
+
+if (isset($_POST['register'])) {
+    require_once 'database/database.php';
+    session_start();
+    $email = $_POST['email'];
+    $pass = $_POST['pass'];
+
+    $db->insert_user($email, $pass);
+}
 ?>
 <!DOCTYPE html>
 <html lang="en-US">

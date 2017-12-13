@@ -1,7 +1,11 @@
+DROP TABLE IF EXISTS cocktails;
+DROP TABLE IF EXISTS category;
+DROP TABLE IF EXISTS users;
+
 CREATE TABLE users (
 password VARCHAR(100) NOT NULL,
-first_name VARCHAR(30) NOT NULL,
-last_name VARCHAR(30) NOT NULL,
+first_name VARCHAR(30) DEFAULT NULL,
+last_name VARCHAR(30) DEFAULT NULL,
 email VARCHAR(50) NOT NULL,
 PRIMARY KEY (email)
 );

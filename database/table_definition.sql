@@ -28,3 +28,17 @@ FOREIGN KEY (creator) REFERENCES users(email),
 PRIMARY KEY (entry_id)
 );
 
+INSERT INTO users(password, first_name, last_name, email)
+VALUES ('1234' , 'Luke', 'Peterson', 'lucpeter@mymail.mines.edu');
+
+INSERT INTO category(category)
+VALUES ('Rum'), ('Vodka'), ('Tequila'), ('Whiskey'), ('Gin');
+
+INSERT INTO cocktails(name, creator, category, description, ingredients) 
+VALUES ('Daquiri' , 'lucpeter@mymail.mines.edu', 'Rum', 'Limey', 'rum,lime,sugar,ice'),
+    ('Old Fashioned' , 'lucpeter@mymail.mines.edu', 'Whiskey', 'Strong', 'whiskey,lemon peel,bitters,sugar,ice'),
+    ('Strawberry Daquiri' , 'lucpeter@mymail.mines.edu', 'Rum', 'Limey', 'rum,strawberry,lime,sugar,ice'),
+    ('Gin Fizz' , 'lucpeter@mymail.mines.edu', 'Gin', 'Limey', 'gin,lime,sugar,ice,egg white'),
+    ('Marg' , 'lucpeter@mymail.mines.edu', 'Tequila', 'Limey', 'tequila,orange,lime,sugar,ice'),
+    ('Pina Colada' , 'lucpeter@mymail.mines.edu', 'Rum', 'Coconut', 'rum,cococut,pineapple,ice');
+    

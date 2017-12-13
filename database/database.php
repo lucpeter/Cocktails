@@ -75,6 +75,34 @@ class CockTailDAO {
         }
         return $data;
     }
+    
+    function get_categories() {
+        $data = [];
+        $sql = "SELECT * FROM category";
+        $result = $this->conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $data[] = $row; 
+            }
+        }
+        return $data;
+    }
+    
+    function get_cocktail_by_Id($id) {
+        $data = [];
+        $sql = "SELECT * FROM cocktails WHERE entry_id = '" . $id . "'";
+        $result = $this->conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $data[] = $row; 
+            }
+        }
+        return $data;
+    }
 
     function get_user_name_by_email($email) {
         $name = '';

@@ -36,14 +36,6 @@
                     echoRecipeCard($cocktailId, $cocktailName, $cocktailDescription, $cocktailAuthorName);
                 }
                         ?>
-                        <div class="card">
-                            <img src="../../images/cocktailIcon.png" alt="Avatar" width="100" height="100">
-                            <div class="container">
-                                <h4><b>Drink</b></h4> 
-                                <p>Drink description</p> 
-                                <p>Drink Author</p> 
-                            </div>
-                        </div>
                     </section>
                 </article>
                 <?php include '../footer/footer.php'?>

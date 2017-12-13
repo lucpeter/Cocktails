@@ -12,24 +12,41 @@ class CockTailDAO {
         } 
     }
     
-    public function is_valid_user($email, $pass) {
+    public function is_valid_user(&$errors, $email, $pass) {
         $query = "select * from users where email = ? AND password = ?";
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param("ss", $email, $pass);
         $stmt->execute();
 
-        $valid = $stmt->get_result()->num_rows == 1;
+        //$valid = $stmt->get_result()->num_rows == 1;
+        $result = $stmt->get_result()->fetch_assoc();
+
+        if (empty($result)) {
+            $valid = false;
+            $errors[] = "You ain't even real, fam";
+        } else {
+            $valid = $result['active'] > 0;
+            if (!$valid) {
+                $errors[] = 'You have not activated your account -.-';
+            }
+        }
+        
         $stmt->close();
 
         return $valid;
     }
 
-    function insert_user($email, $pass) {
+    function insert_user(&$errors, $email, $pass) {
         $query = 'insert into users (email, password) values (?, ?)';
         $stmt = $this->conn->prepare($query);
         $stmt->bind_param('ss', $email, $pass);
 
-        $stmt->execute();
+        if (!$stmt->execute()) {
+            if ($stmt->errno == 1062) {
+                $errors[] = 'Email already taken.';
+            }
+        }
+            
         $stmt->close();
     }
 

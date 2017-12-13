@@ -1,11 +1,16 @@
 <?php
+$errors = [
+    'register' => [],
+    'login' => []
+];
+
 if (isset($_POST['login'])) {
     require_once 'database/database.php';
     session_start();
     $user = $_POST['user'];
     $pass = $_POST['pass'];
 
-    if ($db->is_valid_user($user, $pass)) {
+    if ($db->is_valid_user($errors['login'], $user, $pass)) {
         $_SESSION['user'] = $user;
         header('Location: inside/');
     }
@@ -17,7 +22,15 @@ if (isset($_POST['register'])) {
     $email = $_POST['email'];
     $pass = $_POST['pass'];
 
-    $db->insert_user($email, $pass);
+    $db->insert_user($errors['register'], $email, $pass);
+
+    $subject = 'Complete your registration to Cocktales';
+    $body = <<<EOD
+Thanks for registering with Cocktales!
+<a href="http://luna.mines.edu/lucpeter/Cocktails/verify.php?uid=$email">Click this link to complete your registration</a>
+EOD;
+
+    mail($email, $subject, $body);
 }
 ?>
 <!DOCTYPE html>
@@ -47,6 +60,17 @@ if (isset($_POST['register'])) {
                         <div class="imgcontainer">
                             <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
                         </div>
+                        <div class="errorcontainer">
+                            <?php
+                            if (!empty($errors['register'])) {
+                                echo "<ul>";
+                                foreach ($errors['register'] as $e) {
+                                    echo "<li style='color: red; list-style: none;'>$e</li>";
+                                }
+                                echo "</ul>";
+                            }
+                            ?>
+                        </div>
                         <div class="container">
                             <label hidden><b>Email</b></label>
                             <input type="text" placeholder="Enter Email" name="email" required>
@@ -54,16 +78,22 @@ if (isset($_POST['register'])) {
                             <input type="password" placeholder="Enter Password" name="pass" required>
                             <button type="submit" name="register">Register</button>
                         </div>
-
-                        <div class="container cancelContainer">
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw"><a href="#">Forgot password?</a></span>
-                        </div>
                     </form>
                     <form method="post" action="" autocomplete="off" style="float: right;">
                         <h3>Login</h3>
                         <div class="imgcontainer">
                             <img src="images/cocktailIcon.png" alt="Avatar" class="avatar">
+                        </div>
+                        <div class="errorcontainer">
+                            <?php
+                            if (!empty($errors['login'])) {
+                                echo "<ul>";
+                                foreach ($errors['login'] as $e) {
+                                    echo "<li style='color: red; list-style: none;'>$e</li>";
+                                }
+                                echo "</ul>";
+                            }
+                            ?>
                         </div>
                         <div class="container">
                             <label hidden><b>Username</b></label>
@@ -73,12 +103,11 @@ if (isset($_POST['register'])) {
                             <button type="submit" name="login">Login</button>
                         </div>
                         <div class="container cancelContainer">
-                            <button type="button" class="cancelbtn">Cancel</button>
-                            <span class="psw"><a href="#">Forgot password?</a></span>
+                            <span class="psw"><a href="reset.php">Forgot password?</a></span>
                         </div>
                     </form>
                 </section>
-                <?php include 'inside/footer/footer.php'?>
+                <?php include 'inside/footer/footer.php'; ?>
             </div>
         </section>
     </body>

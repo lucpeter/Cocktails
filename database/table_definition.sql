@@ -7,6 +7,7 @@ password VARCHAR(100) NOT NULL,
 first_name VARCHAR(30) DEFAULT NULL,
 last_name VARCHAR(30) DEFAULT NULL,
 email VARCHAR(50) NOT NULL,
+active BOOLEAN DEFAULT 0,
 PRIMARY KEY (email)
 );
 

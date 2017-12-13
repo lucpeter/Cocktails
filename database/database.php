@@ -120,8 +120,16 @@ class CockTailDAO {
 
     function insert_cocktail($name, $creator, $category, $description, $ingredients) {
         $query = "insert into cocktails(name, creator, category, description, ingredients) VALUES (?, ?, ?, ?, ?)";
-        $stmt = $conn->prepare($query);
-        $stmt->bind_param("sssss", $name, $creator, $category, $desciption, $ingredients);
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("sssss", $name, $creator, $category, $description, $ingredients);
+        $stmt->execute();
+        $stmt->close();
+    }
+
+    function update_cocktail($id, $name, $creator, $category, $description, $ingredients) {
+        $query = "UPDATE cocktails SET name=?, creator=?, category=?, description=?, ingredients=? WHERE entry_id=?";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param("ssssss", $name, $creator, $category, $description, $ingredients, $id);
         $stmt->execute();
         $stmt->close();
     }

@@ -1,4 +1,5 @@
 <?php
+$_SESSION['expire_time'] = 5*60; // Time in seconds
 require_once 'ensure_auth.php';
 ?>
 

@@ -63,7 +63,6 @@ if (isset($_POST['login'])) {
                             <input type="password" placeholder="Enter Password" name="pass" required>
                             <button type="submit" name="login">Login</button>
                         </div>
-
                         <div class="container cancelContainer">
                             <button type="button" class="cancelbtn">Cancel</button>
                             <span class="psw"><a href="#">Forgot password?</a></span>

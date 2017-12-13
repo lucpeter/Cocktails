@@ -3,4 +3,4 @@ session_start();
 if (isset($_SESSION['user'])) {
     session_destroy();
 }
-header('Location: /lucpeter/Cocktails/auth.php');
+header('Location: ../auth.php');

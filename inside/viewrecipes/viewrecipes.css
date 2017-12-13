@@ -11,8 +11,17 @@
     display: inline-block;
 }
 
+.card a {    
+    color: inherit;
+}
+
+.card a:hover {    
+    text-decoration: none;
+}
+
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    opacity: 1.0;
 }
 
 img {

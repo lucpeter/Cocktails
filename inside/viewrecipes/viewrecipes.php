@@ -19,10 +19,23 @@
             <div class="content">
                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
                 <?php include '../innernavbar/navbar.php'?>
-                <?php include 'echoRecipeCard.php'?>
+                <?php require_once 'echoRecipeCard.php'?>
+                <?php require_once '../../database/database.php'?>
                 <article>
                     <h1 class="pageTitle">View Recipes</h1>
                     <section>
+                        <?php
+                $data = $db->get_cocktails();
+                foreach($data as $row)
+                {
+                    $cocktailName = $row["name"];
+                    $cocktailDescription = $row["description"];
+                    $cocktailId = $row["entry_id"];
+                    $cocktailAuthorEmail = $row["creator"];
+                    $cocktailAuthorName = $db->get_user_name_by_email($cocktailAuthorEmail);
+                    echoRecipeCard($cocktailId, $cocktailName, $cocktailDescription, $cocktailAuthorName);
+                }
+                        ?>
                         <div class="card">
                             <img src="../../images/cocktailIcon.png" alt="Avatar" width="100" height="100">
                             <div class="container">

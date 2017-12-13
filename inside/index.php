@@ -20,13 +20,13 @@ require_once 'ensure_auth.php';
     </head>
     <body>    
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <?php include 'inside/innernavbar/navbar.php'?>
+        <?php include 'innernavbar/navbar.php'?>
         <section>
             <h1 class="pageTitle">Cocktails</h1>
             <div id="welcomeMessage">
                 <p></p>
             </div>
         </section>
-        <?php include 'inside/footer/footer.php'?>
+        <?php include 'footer/footer.php'?>
     </body>
 </html>

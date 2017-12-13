@@ -36,7 +36,7 @@ class CockTailDAO {
     function get_cocktails() {
         $data = [];
         $sql = "SELECT * FROM cocktails";
-        $result = $conn->query($sql);
+        $result = $this->conn->query($sql);
 
         if ($result->num_rows > 0) {
             // output data of each row
@@ -45,6 +45,20 @@ class CockTailDAO {
             }
         }
         return $data;
+    }
+
+    function get_user_name_by_email($email) {
+        $name = '';
+        $sql = "SELECT first_name, last_name FROM users WHERE email = '" . $email . "'";
+        $result = $this->conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            // output data of each row
+            while($row = $result->fetch_assoc()) {
+                $name = $row["first_name"] . " " . $row["last_name"]; 
+            }
+        }
+        return $name;
     }
 
     function insert_cocktail($name, $creator, $category, $description, $ingredients) {

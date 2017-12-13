@@ -18,7 +18,6 @@ class CockTailDAO {
         $stmt->bind_param("ss", $email, $pass);
         $stmt->execute();
 
-        //$valid = $stmt->get_result()->num_rows == 1;
         $result = $stmt->get_result()->fetch_assoc();
 
         if (empty($result)) {
@@ -50,6 +49,19 @@ class CockTailDAO {
         $stmt->close();
     }
 
+    public function verify_user($uid) {
+        $query = 'update users set active = 1 where email = ?';
+        $stmt = $this->conn->prepare($query);
+        $stmt->bind_param('s', $uid);
+
+        $stmt->execute();
+        $affected_rows = $stmt->affected_rows;
+        
+        $stmt->close();
+
+        return $affected_rows == 1;
+    }
+    
     function get_cocktails() {
         $data = [];
         $sql = "SELECT * FROM cocktails";

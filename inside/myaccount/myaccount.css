@@ -1,0 +1,41 @@
+form {
+    width: 75%;
+    margin: 12px auto;
+}
+
+textarea {
+    width: 100%;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: lightgray;
+    resize: none;
+}
+
+input[type=text], input[type=password] {
+    width: 50%;
+    max-width: 360px;
+    padding: 12px 20px;
+    background-color: lightgray;
+    margin: 8px 0;
+    display: block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+button, input[type=submit], input[type=reset] {
+    background-color: lightslategray;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px auto;
+    border: none;
+    cursor: pointer;
+    width: 60%;
+    max-width: 360px;
+}
+
+button:hover, input[type=submit]:hover, input[type=reset]:hover {
+    opacity: 0.8;
+}

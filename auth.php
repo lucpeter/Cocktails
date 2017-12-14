@@ -12,7 +12,7 @@ if (isset($_POST['login'])) {
 
     if ($db->is_valid_user($errors['login'], $user, $pass)) {
         $_SESSION['user'] = $user;
-        header('Location: inside/');
+        header('Location: inside/addupdaterecipe/addupdaterecipe.php');
     }
 }
 

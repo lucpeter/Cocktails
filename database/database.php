@@ -49,6 +49,16 @@ class CockTailDAO {
         $stmt->close();
     }
 
+    public function reset_password($uid, $pass) {
+        $stmt = $this->conn->prepare('update users set password = ? where email = ?');
+        $stmt->bind_param('ss', $pass, $uid);
+
+        $success = $stmt->execute();
+        $stmt->close();
+        return $success;
+    }
+        
+
     public function verify_user($uid) {
         $query = 'update users set active = 1 where email = ?';
         $stmt = $this->conn->prepare($query);
